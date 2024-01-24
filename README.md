@@ -149,6 +149,114 @@ Angular
             ng serve        build the application and the bundle is hosted on a development server @ 4200
                             the port number cna be customized using '--port' flag.
     
+    
+    Javascript vs TypeScript
+
+        arth.js                     arth.ts
+
+         class Arth {               class Arth {
+                                        PI:number;
+
+            constructor(){              constructor(){
+                this.PI=3.14;               this.PI=3.14;
+            }                           }
+
+            sum(a,b) {                  sum(a:number,b:number):number {
+                return a+b;                    return a+b;
+            }                           }
+         }                          }
+
+    JavaScript Module
+
+        Each file is a module.
+        Resourcesa contiained in a file can be exported and imported using export and import keywords.
+
     Angular Modules
+
+        A module in angular is a class that encapsulates Components,Pipes,Directives, services 
+        and other angular modules.
+
+         @NgModule({
+            declarations:[ /*list of components,pipes and directives that belong to this module */ ],
+            imports:[ /*list of modules we want to import into the current module*/ ],
+            exports:[ /*list of Components,pipes or Directives we want export from the current module */ ],
+            providers:[ /*list of Services that are injectable at the current module level */ ],
+            bootstrap:[ /*list of Components to be loaded initially when the current module loads */ ]
+        })
+        class SalesModule {
+
+        }
+
+        Every angular app is hosued inside a top-level-module called ROOT-MODULE generally named as app.module
+        Other sub-modules are called FEATURE-MODULES.
+
+        The 'exports' section of the meta-data is absent for Root Module.
+        The 'bootstrap' section is absent for other Feature Modules.
+
+    Angular Component
+
+        Angular offer html extendability, means we can create our own html elements.
+
+        Components are custom html elements.
+
+        Component   =   Behaviour       +       DOM     +      Style
+                        component.ts         component.html     component.css
+                        (fiels and methds)      
+
+        Dashboard.component.ts
+            @Component({
+                selector:"app-dashboard",
+                templateUrl:"Dashboard.component.html",
+                styleUrls:["Dashboard.component.css"]
+            })
+            class DashboardComponent {
+                nofOMsgs:number;
+                noOfReadMsgs:number;
+
+                constructor(){
+                    this.noOfMsgs=100;
+                    this.noOfReadMsgs=90;
+                }
+            }
+
+        Dashboard.component.html
+            <div>
+                Message: {{noOfMsgs - noOfReadMsgs}} / {{noOfMsgs}}
+            </div>
+
+        Dashboard.component.css
+            div{
+                border:1px solid black;
+            }
+
+        <app-dashboard></app-dashboard>             <div> Message: 10/100 </div>
+
+    Data Binding
+
+        using the fields and methods of component.ts inside the component.html
+        is called data binding.
+
+        Interpolation
+
+            we can render the output of any angular-expression on to the html-dom.
+
+            <tag> {{angular-expression}} </tag>
+
+            for any reason, if the fields are updated, the expression is reevalauted and the output also
+            is automatically updated.
+
+        Two-Way Data Binding
+
+            We ue this to bind a field with an input element of an html form.
+
+            we have to use an attribute called 'ngModel' from 'FormsModule' from '@angular/forms' .
+
+            <input type="text" name="tb1" [(ngModel)]="field" />
+
+        One-Way Data Binding
+            Attribute Binding
+            Css Class Binding
+            Style Binding
+            Event Binding
 
         
