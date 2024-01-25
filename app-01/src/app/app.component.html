@@ -5,6 +5,16 @@
 <section>
   <h3>Hello <em>{{firstName}} {{lastName}} </em> ! We are happy to have you here...!</h3>
 
+  <div>
+    <img 
+      [src]="logos[logoIndex]" 
+      [style.width.px]="logoWidth" 
+      [class.centered]="cFlag"
+      [class.bordered]="bFlag"
+      (click)="toggleIndex()"
+      />
+  </div>
+
   <form>
     <div>
       <label>First Name: </label>
@@ -13,6 +23,15 @@
     <div>
       <label>Last Name: </label>
       <input type="text" name="tb2" [(ngModel)]="lastName" />
+    </div>
+    <div>
+      <label>Logo Width: </label>
+      <input type="range" name="r1" [(ngModel)]="logoWidth" min="100" max="700" />
+      <strong> {{logoWidth}} px</strong>
+    </div>
+    <div>
+      <label> <input type="checkbox" name="c1" [(ngModel)]="cFlag" /> Center</label>
+      <label> <input type="checkbox" name="c2" [(ngModel)]="bFlag" /> Border</label>
     </div>
   </form>
 </section>

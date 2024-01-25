@@ -255,8 +255,67 @@ Angular
 
         One-Way Data Binding
             Attribute Binding
-            Css Class Binding
+
+                to bind the value of a field with an attribute of an element.
+
+                <tagName [attributeName]="field"> </tagName>
+                <tagName attributeName="value"> </tagName>
+
+                <td colspan="5"></td>
+                <td [colspan]="x"></td>
+
             Style Binding
+
+                to bind the value of a field with a css-property of an element.
+
+                <tagName [style.cssProperty]="field"> </tagName>
+
+            Css Class Binding
+
+                to switch a css class on or off using a booleanField.
+
+                <tagName [class.className]="booleanField"> </tagName>
+            
             Event Binding
 
-        
+                to invoke a method when an event occurs.
+
+                <tagName (event-directive)="method()"> </tagName>    
+
+                html events             event-directives
+                ------------------------------------------------
+                    onload              load
+                    onblur              blur
+                    onfocus             focus
+                    onchange            change
+                    onclick             click
+                    ondblclick          dblClick
+                    onsubmit            ngSubmit
+                    
+    Angular Directives
+
+        Angular offer html extendability, means we can create our own html elements and
+        attributes.
+
+        Components are custom html elements.
+        Directives are custom html attributes.
+
+        in-built attribute directives
+            ngModel
+            ngForm
+            ngClass
+            ....etc.,
+
+        in-built strucutral directives
+            *ngIf
+            *ngFor
+            ngSwitch    *ngSwitchCase   *ngSwitchDefault
+
+        custom directive
+            @Directive({
+                selector:"[fastMovingStock]",
+                providers:[]
+            })
+            class FastMovingStockMarkerDirective {
+
+            }
