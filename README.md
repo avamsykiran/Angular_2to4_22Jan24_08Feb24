@@ -319,3 +319,37 @@ Angular
             class FastMovingStockMarkerDirective {
 
             }
+
+    Integrating Bootstrap With Angular
+
+        install bootstrap 
+            npm i bootstrap
+
+        include bootstrap js and bootstrap css into
+        scripts and styles section of angular.json
+
+    Angular Pipes
+
+        a pipe is used to tranform a piece data into another just before rendering.
+
+        in-built pipes
+            lowercase
+            uppercase
+            titlecase
+            number
+            percent
+            currency
+            date
+
+        custom pipe
+            @Pipe({
+                name:'numberToWords',
+                providers:[]
+            })
+            class numberToWordsPipe implements PipeTransform {
+                transform(value:any) : any{
+                    return transformedValue;
+                }
+            }
+        
+
