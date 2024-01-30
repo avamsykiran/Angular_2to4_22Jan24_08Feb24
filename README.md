@@ -352,4 +352,42 @@ Angular
                 }
             }
         
+        Assignemnt:
+            assuming num=1234567.89
+
+            {{num|formatNumber}}
+
+            12,34,567.89
+
+    Anglar Routing
+
+        Routing allows us to display only one component
+        at a designated area of the index page
+        depending on the URL.
+
+        RouterModuel from @angular/router provide the belwo
+        services, classea and method to manage the same
+
+            Routes              [
+                                    {path:'/abc',component:Component1},
+                                    {path:'/xyz',component:Component2}
+                                ]
+
+            RouterModule.forRoot(routes);
+
+            router-outlet       is a built-in component to preserve the 
+                                designated where we want the components to
+                                appear.
+
+            routerLink          is a directive for 'a' tag.
+                                this takes the path where to go
+                                when clicked ont he link.
+
+            routerLinkActive    is a directive that takes a css-class
+                                and applies that class to the link that
+                                is currently active.
+
+            Router              is a service that  offers two methods
+                                navigate(['/sales','/offers']);
+                                navigateByUrl("/sales/offers");
 

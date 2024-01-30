@@ -8,6 +8,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { BannerComponent } from './banner/banner.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { IntoWordsPipe } from './into-words.pipe';
+import { FormatNumberPipe } from './format-number.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IntoWordsPipe } from './into-words.pipe';
     FriendsComponent,
     BannerComponent,
     PipesDemoComponent,
-    IntoWordsPipe
+    IntoWordsPipe,
+    FormatNumberPipe
   ],
   imports: [
     BrowserModule,
