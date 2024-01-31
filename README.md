@@ -391,3 +391,13 @@ Angular
                                 navigate(['/sales','/offers']);
                                 navigateByUrl("/sales/offers");
 
+    Angular Services
+
+        Service is a class that hold bussinsess or data logic
+
+        Angular supports Dependency Injection For Services.
+
+        constructor(private myService:MyService){
+            
+        }
+

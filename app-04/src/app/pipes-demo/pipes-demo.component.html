@@ -1,0 +1,45 @@
+<section class="container-fluid p-4">
+    <div class="row">
+        <div class="col-sm-2">
+            <h3>String related pipes</h3>
+            <p>{{str}}</p>
+            <p>{{str|lowercase}}</p>
+            <p>{{str|uppercase}}</p>
+            <p>{{str|titlecase}}</p>
+        </div>
+
+        <div class="col-sm-2">
+            <h3>number pipe</h3>
+            <p>{{num}}</p>
+            <p>{{num|number:'3.2-2'}}</p>
+            <p>{{num|number:'8.2-2'}}</p>
+            <p>{{num|number:'2.3-5'}}</p>
+
+            <p>{{num|intoWords}}</p>
+        </div>
+
+        <div class="col-sm-3">
+            <h3>Date pipe</h3>
+            <p>{{today}}</p>
+            <p>{{today|date:'short'}}</p>
+            <p>{{today|date:'long'}}</p>
+            <p>{{today|date:'d'}}</p>
+            <p>{{today|date:'dd'}}</p>
+            <p>{{today|date:'dd-MM-yy'}}</p>
+            <p>{{today|date:'dd-MMM-yyyy'}}</p>
+            <p>{{today|date:'dd-MMMM-yyyy hh:mm:ss aa'}}</p>
+            <p>{{today|date:'dd-MMMM-yyyy HH:mm:ss'}}</p>
+        </div>
+
+        <div class="col-sm-2">
+            <h3>Currency pipe</h3>
+            <p>{{num}}</p>
+            <p>{{num|currency:'INR'}}</p>
+            <p>{{num|currency:'USD'}}</p>
+            <p>{{num|currency:'JPY'}}</p>
+            <p>{{num|currency:'GBP'}}</p>
+            <p>{{num|currency:'AUD'}}</p>
+            <p>{{num|currency:'ABC'}}</p>
+        </div>    
+    </div>
+</section>

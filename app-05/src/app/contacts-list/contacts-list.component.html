@@ -1,0 +1,23 @@
+<section class="col-sm-9 mx-auto border border-primary p-4">
+    <h3>Contacts List</h3>
+
+    <div class="row border-bottom border-danger p-2 text-center fw-bold">
+        <div class="col-1">Contact#</div>
+        <div class="col">Name</div>
+        <div class="col-1">Mobile</div>
+        <div class="col-2">Mail Id</div>
+        <div class="col-2">Actions</div>
+    </div>
+
+    <div class="row border-bottom border-secondary p-2 " *ngFor="let c of contacts">
+        <div class="col-1">{{c.id}}</div>
+        <div class="col">{{c.fullName}}</div>
+        <div class="col-1">{{c.mobile}}</div>
+        <div class="col-2">{{c.mailId}}</div>
+        <div class="col-2">
+            <button class="btn btn-sm btn-primary me-1">EDIT</button>
+            <button class="btn btn-sm btn-danger">DELETE</button>
+        </div>
+    </div>
+
+</section>

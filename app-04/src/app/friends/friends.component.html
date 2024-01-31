@@ -1,0 +1,17 @@
+<section class="container-fluid p-4">
+    <h3>Friends List</h3>
+
+    <p *ngIf="!friends || friends.length===0">No Friends To Display </p>
+
+    <ol>
+        <li *ngFor="let f of friends"> 
+            {{f}} 
+            <button type="button" class="btn btn-link" (click)="removeFriend(f)">REMOVE</button>
+        </li>
+    </ol>
+
+    <form>
+        <label>Friend Name: <input type="text" name="fnm" [(ngModel)]="friend"/></label>
+        <button type="button" class="btn btn-sm btn-primary" (click)="addFriend()">ADD</button>
+    </form>
+</section>
