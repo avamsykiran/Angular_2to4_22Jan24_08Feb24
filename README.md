@@ -401,3 +401,14 @@ Angular
             
         }
 
+    Inter-Component Communication
+
+        The parent component can pass data through attributes
+        of the child component. We can mark fields of a child
+        component as an attribute using '@Input()' decorator.
+
+        The child component can create its own events uwing EventEmitter
+        and thee objects must be marked with @Output decorator.'emit' is a
+        method of EventEmitter that raises an evetn can pass some data to the
+        parnet. The event handler of the parent component can receive this data
+        using $event.

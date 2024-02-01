@@ -7,6 +7,7 @@ import { Contact } from './contact';
 export class ContactsService {
 
   private contacts:Contact[];
+  private nextContactId:number;
 
   constructor() {
     this.contacts=[
@@ -14,6 +15,7 @@ export class ContactsService {
       {id:2,fullName:"Sagar",mobile:"9052224752",mailId:"sagar@gmail.com"},
       {id:3,fullName:"Suresh",mobile:"9052224751",mailId:"suyresh@gmail.com"}
     ];
+    this.nextContactId=4;
    }
 
    getAll():Contact[]{
@@ -25,6 +27,7 @@ export class ContactsService {
    }
 
    add(contact:Contact):void{
+    contact.id=this.nextContactId++;
     this.contacts.push(contact);
    }
 

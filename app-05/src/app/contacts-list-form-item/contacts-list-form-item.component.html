@@ -1,1 +1,42 @@
-<p>contacts-list-form-item works!</p>
+<section class="col-sm-4 mx-auto border border-primary p-4">
+
+    <h3>{{isEditing?"Edit":"New"}} Contact</h3>
+
+    <form (ngSubmit)="formSubmitted()" #contactForm="ngForm">
+        <div>
+            <label>Contact Id: </label>
+            <input type="number" name="cid" [(ngModel)]="contact.id" readonly class="form-control" />
+        </div>
+        <div>
+            <label>Name: </label>
+            <input type="text" name="cnm" [(ngModel)]="contact.fullName" 
+                class="form-control" required minlength="4" #fullName="ngModel"/>
+            <div class="alert alert-danger p-2" *ngIf="fullName.invalid && (fullName.touched || fullName.dirty)">
+                <p *ngIf="fullName.errors!['required']">Full Name can not be left blank.</p>
+                <p *ngIf="fullName.errors!['minlength']">Full Name must be atleast 4 letters in length.</p>
+            </div>
+        </div>
+        <div>
+            <label>Mobile: </label>
+            <input type="text" name="mob" [(ngModel)]="contact.mobile" 
+                class="form-control" required pattern="[1-9][0-9]{9}" #mobile="ngModel"/>
+            <div class="alert alert-danger p-2" *ngIf="mobile.invalid && (mobile.touched || mobile.dirty)">
+                <p *ngIf="mobile.errors!['required']">Mobile Number can not be left blank.</p>
+                <p *ngIf="mobile.errors!['pattern']">Mobile number is a 10 digit number.</p>
+            </div>
+        </div>
+        <div>
+            <label>Mail Id: </label>
+            <input type="email" name="mid" [(ngModel)]="contact.mailId" 
+                class="form-control" required  #mailId="ngModel"/>
+            <div class="alert alert-danger p-2" *ngIf="mailId.invalid && (mailId.touched || mailId.dirty)">
+                <p *ngIf="mailId.errors!['required']">Mail Id can not be left blank.</p>
+                <p *ngIf="mailId.errors!['email']">Please provide a valid mail id.</p>
+            </div>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" [disabled]="contactForm.invalid">SAVE CONTACT</button>
+        </div>
+    </form>
+
+</section>

@@ -14,4 +14,9 @@ export class ContactsListComponent {
   constructor(private cs:ContactsService){
     this.contacts=cs.getAll();
   }
+
+  delContact(id:number){
+    this.cs.deleteById(id);
+    this.contacts=this.cs.getAll();
+  }
 }
