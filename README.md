@@ -412,3 +412,12 @@ Angular
         method of EventEmitter that raises an evetn can pass some data to the
         parnet. The event handler of the parent component can receive this data
         using $event.
+
+    Template Driven Forms vs Reactive Forms (Model Driven Forms)
+
+    FormsModule                 ReactiveFormModule
+        NgModel                     FormControl
+        NgForm                      FormGroup
+
+    
+                                    
