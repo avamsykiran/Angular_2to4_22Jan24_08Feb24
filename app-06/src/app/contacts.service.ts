@@ -11,9 +11,9 @@ export class ContactsService {
 
   constructor() {
     this.contacts=[
-      {id:1,fullName:"Vamsy",mobile:"9052224753",mailId:"vamsy@gmail.com"},
-      {id:2,fullName:"Sagar",mobile:"9052224752",mailId:"sagar@gmail.com"},
-      {id:3,fullName:"Suresh",mobile:"9052224751",mailId:"suyresh@gmail.com"}
+      {id:1,fullName:"Vamsy",mobile:"9052224753",mailId:"vamsy@gmail.com",age:23},
+      {id:2,fullName:"Sagar",mobile:"9052224752",mailId:"sagar@gmail.com",age:33},
+      {id:3,fullName:"Suresh",mobile:"9052224751",mailId:"suyresh@gmail.com",age:78}
     ];
     this.nextContactId=4;
    }

@@ -3,4 +3,5 @@ export interface Contact {
     fullName:string;
     mailId:string;
     mobile:string;
+    age:number;
 }

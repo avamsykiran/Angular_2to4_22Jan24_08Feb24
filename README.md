@@ -420,4 +420,29 @@ Angular
         NgForm                      FormGroup
 
     
-                                    
+    RxJS - Observables
+
+        Observable is an enhanced promise.
+
+        let ob = new Observable( observer => {
+            //the asynchronosu operation
+            //observer.next(val)    to emit intermidiate results of the job
+            //observer.error(err)   to emit any error while doing the job
+            //observer.complete()   to indicate the successful completion of the job.
+        });                                
+
+        ob.subscribe({
+            next: val => { /*the values are received*/ },
+            error: err => { /* the erro is received*/ },
+            complete: () => { /* we will do something after completion of the job*/ }
+        }); //job execution starts
+
+    Rest-Api Communication
+
+        HttpClientModule from '@angular/commons/http'
+            |
+            |-HttpClient
+                get(endPoint) : Observable<data>
+                post(endPoint,reqBody) : Observable<data>
+                put(endPoint,reqBody) : Observable<data>
+                delete(endPoint) : Observable<void>

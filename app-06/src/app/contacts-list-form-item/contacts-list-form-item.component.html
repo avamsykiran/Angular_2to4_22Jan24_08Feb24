@@ -31,6 +31,14 @@
                 <p *ngIf="mailId.errors!['email']">Please provide a valid mail id.</p>
             </div>
         </div>
+        <div>
+            <label>Age: </label>
+            <input type="number" formControlName="age" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="age.invalid && (age.touched || age.dirty)">
+                <p *ngIf="age.errors!['required']">Age can not be left blank.</p>
+                <p *ngIf="age.errors!['ageRange']">Age must be of 18 to 100 in range.</p>
+            </div>
+        </div>
         <div class="d-grid">
             <button class="btn btn-primary" [disabled]="contactForm.invalid">SAVE CONTACT</button>
         </div>
