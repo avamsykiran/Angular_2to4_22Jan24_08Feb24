@@ -1,0 +1,16 @@
+<section class="col-sm-9 mx-auto border border-primary p-4">
+    <h3>Contacts List</h3>
+
+    <div class="row border-bottom border-danger p-2 text-center fw-bold">
+        <div class="col-1">Contact#</div>
+        <div class="col">Name</div>
+        <div class="col-1">Mobile</div>
+        <div class="col-2">Mail Id</div>
+        <div class="col-2">Actions</div>
+    </div>
+
+    <app-contacts-list-item 
+        *ngFor="let c of contacts" [contact]="c" (delBtnClicked)="delContact($event)">
+    </app-contacts-list-item>
+
+</section>

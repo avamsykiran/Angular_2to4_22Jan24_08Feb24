@@ -446,3 +446,16 @@ Angular
                 post(endPoint,reqBody) : Observable<data>
                 put(endPoint,reqBody) : Observable<data>
                 delete(endPoint) : Observable<void>
+
+    Fake Rest-Api using json-server
+
+        md contacts-api
+        cd contacts-api
+        npm init -y
+        npm i json-server
+
+        create a contacts-api/data.json and populate it with hypothetical data
+        modify contacts-api/package.json file to put "start":"json-server --port 9999 --watch ./data.json"
+
+        npm start
+        
