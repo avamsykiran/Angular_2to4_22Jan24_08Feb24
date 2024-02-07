@@ -21,6 +21,8 @@ export class ContactsListFormItemComponent {
   mobile: FormControl;
   age:FormControl;
 
+  errMsg!:string;
+
   constructor(private cs: ContactsService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     this.id = new FormControl(0);
@@ -36,11 +38,16 @@ export class ContactsListFormItemComponent {
       mailId: this.mailId,
       age:this.age
     });
+  }
 
+  ngOnInit(){
     let cidParam = this.activatedRoute.snapshot.params["cid"];
     if (cidParam) {
       this.isEditing = true;
-      this.contactForm.reset(this.cs.getById(Number(cidParam)));
+      this.cs.getById(Number(cidParam)).subscribe({
+        next: contact => this.contactForm.reset(contact),
+        error: err => { console.log(err); this.errMsg="Unable to laod data! Please try again later!" }
+      });
     }
   }
 
@@ -56,11 +63,17 @@ export class ContactsListFormItemComponent {
   }
 
   formSubmitted() {
+    let ob = null;
     if (this.isEditing) {
-      this.cs.update(this.contactForm.value);
+      ob = this.cs.update(this.contactForm.value);
     } else {
-      this.cs.add(this.contactForm.value);
+      ob = this.cs.add(this.contactForm.value);
     }
-    this.router.navigateByUrl("/");
+
+    ob.subscribe({
+      next: data => this.router.navigateByUrl("/") ,
+      error: err => { console.log(err); this.errMsg="Unable to save data! Please try again later!" }
+    })
+    
   }
 }

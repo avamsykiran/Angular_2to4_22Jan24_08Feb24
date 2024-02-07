@@ -452,10 +452,25 @@ Angular
         md contacts-api
         cd contacts-api
         npm init -y
-        npm i json-server
+        npm i json-server@0.17.4
 
         create a contacts-api/data.json and populate it with hypothetical data
         modify contacts-api/package.json file to put "start":"json-server --port 9999 --watch ./data.json"
 
         npm start
+
+    Angular LifeCycle Hooks for a Component
+        constructor
+        This is invoked when Angular creates a component or directive by calling new on the class.
+
+        ngOnChanges
+        Invoked every time there is a change in one of the input properties of the component.
+
+        ngOnInit
+        Invoked when given component has been initialized.
+        This hook is only called once after the first ngOnChanges
+
+        ngDoCheck
+        Invoked when the change detector of the given component is invoked. It allows us to implement our own change detection algorithm for the given component.
         
+    

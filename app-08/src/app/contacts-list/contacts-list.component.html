@@ -9,8 +9,20 @@
         <div class="col-2">Actions</div>
     </div>
 
-    <app-contacts-list-item 
-        *ngFor="let c of contacts" [contact]="c" (delBtnClicked)="delContact($event)">
-    </app-contacts-list-item>
+    <div *ngIf="!contacts && !errMsg" class="alert alert-info p-2 fw-bold m-2">
+        Please wait while loading data .... !
+    </div>
 
+    <div *ngIf="errMsg" class="alert alert-danger p-2 fw-bold m-2">
+        {{errMsg}}
+    </div>
+
+    <div *ngIf="contacts && contacts.length===0" class="alert alert-info p-2 fw-bold m-2">
+        No records to display
+    </div>
+
+    <ng-container *ngIf="contacts && contacts.length>0">
+        <app-contacts-list-item *ngFor="let c of contacts" [contact]="c" (delBtnClicked)="delContact($event)">
+        </app-contacts-list-item>
+    </ng-container>
 </section>

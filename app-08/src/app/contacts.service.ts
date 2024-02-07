@@ -23,7 +23,7 @@ export class ContactsService {
   }
 
   add(contact: Contact): Observable<Contact> {
-    return this.httpClient.post<Contact>(this.apiUrl,contact);
+    return this.httpClient.post<Contact>(this.apiUrl,{...contact,id:undefined});
   }
 
   update(contact: Contact): Observable<Contact> {

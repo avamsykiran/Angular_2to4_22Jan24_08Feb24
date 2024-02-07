@@ -2,6 +2,10 @@
 
     <h3>{{isEditing?"Edit":"New"}} Contact</h3>
 
+    <div class="alert alert-danger p-2 fw-bold" *ngIf="errMsg">
+        {{errMsg}}
+    </div>
+
     <form (ngSubmit)="formSubmitted()" [formGroup]="contactForm">
         <div>
             <label>Contact Id: </label>
