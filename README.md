@@ -22,8 +22,8 @@ Angular
         Components (Angular, Dynamic, Styling) - Use of roles of classes and templates to form views in Angular components, load components dynamically, use styling as part of a particular template.
         TypeScript - Enforce data types and object structures and create public and private class arguments.
         Two Way Binding - Use two-way binding to communicate changes between the application state and the view.
-        Form Validation - Use form validation in template-driven forms and handle errors appropriately, and use Sync and Async Reactive validators.
-        Routing, NgModules, Observables for data transmission and event handling, Dependency Injections, and APIs.
+        Form Validation - Use form validation in template-driven forms and handle errors appropriately, and use validators.
+        Routing, NgModules, Observables for data transmission and event handling, 
 
     Angular Intro
 
@@ -472,5 +472,6 @@ Angular
 
         ngDoCheck
         Invoked when the change detector of the given component is invoked. It allows us to implement our own change detection algorithm for the given component.
-        
+    
+    
     

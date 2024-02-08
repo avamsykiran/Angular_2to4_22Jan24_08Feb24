@@ -1,0 +1,47 @@
+<section class="col-sm-10 mx-auto border border-primary p-4">
+    <h3>Contacts List</h3>
+
+    <div class="row border-bottom border-danger p-2 text-center fw-bold">
+        <div class="col-1">Contact#</div>
+        <div class="col">Name</div>
+        <div class="col-1">Mobile</div>
+        <div class="col-2">Mail Id</div>
+        <div class="col-1">Age</div>
+        <div class="col-2">Actions</div>
+    </div>
+
+    <app-contacts-list-form-item (saveBtnClicked)="addContact($event)"></app-contacts-list-form-item>
+
+    <div *ngIf="!contacts && !errMsg" class="alert alert-info p-2 fw-bold m-2">
+        Please wait while loading data .... !
+    </div>
+
+    <div *ngIf="errMsg" class="alert alert-danger p-2 fw-bold m-2">
+        {{errMsg}}
+    </div>
+
+    <div *ngIf="contacts && contacts.length===0" class="alert alert-info p-2 fw-bold m-2">
+        No records to display
+    </div>
+
+    <ng-container *ngIf="contacts && contacts.length>0">
+        <ng-container *ngFor="let c of contacts">
+
+            <ng-container *ngIf="c.editable then editableView; else readableView" ></ng-container>    
+
+            <ng-template #readableView>
+                <app-contacts-list-item [contact]="c" (delBtnClicked)="delContact($event)"
+                    (editBtnClicked)="markEditable($event)">
+                </app-contacts-list-item>
+            </ng-template>
+
+            <ng-template #editableView>
+                <app-contacts-list-form-item [contact]="c" (saveBtnClicked)="updateContact($event)"
+                    (cancelBtnClicked)="unMarkEditable($event)">
+                </app-contacts-list-form-item>
+            </ng-template>
+
+        </ng-container>
+    </ng-container>
+
+</section>
