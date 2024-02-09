@@ -473,5 +473,12 @@ Angular
         ngDoCheck
         Invoked when the change detector of the given component is invoked. It allows us to implement our own change detection algorithm for the given component.
     
+    Custom Directives
+
+        @Input()        for receving any values
+
+        @HostListener()    is used to handle event that occur on the elemet.
     
-    
+        ElementRef      represents the element on which the directive is applied.
+
+        
